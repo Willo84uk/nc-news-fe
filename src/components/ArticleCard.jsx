@@ -5,7 +5,7 @@ function ArticleCard({ article }) {
       <div className="articlecard">
         <div>Votes {article.votes}</div>
         <img className="articlelistimg" src={article.article_img_url}></img>
-        <h3> {article.title} Article Card</h3>
+        <h3> {article.title}</h3>
         <div>Article created {createdAt.toGMTString()}</div>
       </div>
     );
