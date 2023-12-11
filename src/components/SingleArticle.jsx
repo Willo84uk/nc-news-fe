@@ -25,7 +25,7 @@ function SingleArticle({isLoading, setIsLoading}) {
         <img className="singlearticleimg" src={article.article_img_url}></img>
         <article>{article.body}</article>
         <p>Written by {article.author} {createdAt.toGMTString()}</p>
-        <p>Votes {article.votes}</p>
+        <p>Votes {article.votes} Comments {article.comment_count}</p>
       </div>
     );
   }
