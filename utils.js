@@ -13,3 +13,14 @@ export const getArticle = (articleId) => {
         return res.data.article
     })
 }
+
+export const patchVote = ({voteValue, articleId}) => {
+    const voteBody = {
+        "inc_votes": voteValue
+      }
+   return newsApi.patch (`/articles/${articleId}`, voteBody).then((res) => {
+        return res
+    }).catch((err) => {
+        return err
+    })
+}
