@@ -21,8 +21,24 @@
   border: 2px solid yellow;
 }
 
+#singlearticlebody{
+  border: 2px solid black;
+}
+
 #topicsdropdown{
   border: 2px solid orange
+}
+
+#commentlist{
+  border: 2px solid yellow
+}
+
+#commentcard{
+  border: 2px solid orange
+}
+
+#newcommentform{
+  border: 2px solid plum
 }
 
 .articlecard{
@@ -30,6 +46,10 @@
 }
 
 .articlelistimg{
+  max-width: 50%;
+}
+
+.singlearticleimg{
   max-width: 50%;
 }
 
