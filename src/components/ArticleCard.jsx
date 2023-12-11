@@ -1,5 +1,13 @@
-function ArticleCard() {
-    return <h3 className="articlecard">Article Card</h3>
+function ArticleCard({ article }) {
+  
+  if(article){
+  return (
+    <div className="articlecard"> 
+    <img className="articlelistimg" src={article.article_img_url}></img>
+      <h3> {article.title} Article Card</h3>
+    </div>
+  );
+}
 }
 
-export default ArticleCard
+export default ArticleCard;

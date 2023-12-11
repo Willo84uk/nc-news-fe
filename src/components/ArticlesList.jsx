@@ -2,12 +2,13 @@ import ArticleCard from "./ArticleCard"
 import NewArticleButton from "./NewArticleButton"
 import TopicsDropdown from "./TopicsDropDown"
 
-function ArticlesList() {
+function ArticlesList({articles}) {
     return ( 
     <div id="articleslist">
-    <h3>Articles List</h3>
     <TopicsDropdown />
-    <ArticleCard />
+    {articles.map((article) => {
+        return <ArticleCard key={article.article_id} article={article}/>
+    })}
     <NewArticleButton />
     </div>
     )

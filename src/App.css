@@ -28,3 +28,11 @@
 .articlecard{
   border: 2px solid black
 }
+
+.articlelistimg{
+  max-width: 50%;
+}
+
+h3{
+  font-size: smaller;
+}
