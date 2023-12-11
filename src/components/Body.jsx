@@ -25,7 +25,7 @@ function Body() {
       <Routes>
         <Route path="/" element={<ArticlesList articles={articles} />} />
         <Route path="/articles/" element={<ArticlesList articles={articles} />} />
-        <Route path="/articles/:article_id" element={<SingleArticleBody />} />
+        <Route path="/articles/:article_id" element={<SingleArticleBody isLoading={isLoading} setIsLoading={setIsLoading}/>} />
       </Routes>
     </div>
   );

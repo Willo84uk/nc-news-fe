@@ -1,11 +1,11 @@
 import CommentList from "./CommentsList";
 import SingleArticle from "./SingleArticle";
 
-function SingleArticleBody() {
+function SingleArticleBody({isLoading, setIsLoading}) {
   return (
     <>
       <div id="singlearticlebody"></div>
-      <SingleArticle />
+      <SingleArticle isLoading={isLoading} setIsLoading={{setIsLoading}} />
       <CommentList />
     </>
   );
