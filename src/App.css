@@ -4,3 +4,27 @@
   padding: 2rem;
   text-align: center;
 }
+
+#mainheader{
+  border: 2px solid blue
+}
+
+#navbar{
+  border: 2px solid red
+}
+
+#body{
+  border: 2px solid green;
+}
+
+#articleslist{
+  border: 2px solid yellow;
+}
+
+#topicsdropdown{
+  border: 2px solid orange
+}
+
+.articlecard{
+  border: 2px solid black
+}
