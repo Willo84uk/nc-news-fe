@@ -38,7 +38,7 @@ export const postNewComment = ({commentInput, articleId, user}) => {
         "username": user,
         "body": commentInput
       }
-    return newsApi.post(`/articles/${articleId}/comments`, newPost).then((res) => {
+    return newsApi.post(`/articles/85/comments`, newPost).then((res) => {
         return res.data.comment
     })
 }
