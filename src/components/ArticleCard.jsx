@@ -6,9 +6,9 @@ function ArticleCard({ article }) {
     const createdAt = new Date(article.created_at);
     return (
       <div className="articlecard">
-        <p>Votes {article.votes}</p>
         <img className="articlelistimg" src={article.article_img_url}></img>
-        <Link to={`/articles/${articleID}`}>{article.title}</Link>
+        <p><Link to={`/articles/${articleID}`}>{article.title}</Link></p>
+        <p>Votes {article.votes}</p>
         <p>Article created {createdAt.toGMTString()}</p>
       </div>
     );
