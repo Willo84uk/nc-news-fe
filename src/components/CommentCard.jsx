@@ -9,6 +9,7 @@ function CommentCard({comment}) {
 
   const handleClick = (event) => {
     const commentId = event.target.id
+    event.currentTarget.disabled = true 
     setError(null)
     deleteComment(commentId)
     .catch((err) => {
