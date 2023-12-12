@@ -4,7 +4,7 @@ import { getAllTopics } from "../../utils";
 import { useEffect, useState } from "react";
 
 
-function TopicsDropdown({ selectedTopic, setSelectedTopic}) {
+function TopicsDropdown({setSelectedTopic}) {
   const [isLoading, setIsLoading] = useState(true);
   const [topics, setTopics] = useState([]);
   const topic = useParams().topic;
@@ -13,7 +13,9 @@ function TopicsDropdown({ selectedTopic, setSelectedTopic}) {
     getAllTopics().then((res) => {
       setTopics(res);
       setIsLoading(false);
+      if(setSelectedTopic !== undefined){
       setSelectedTopic(topic)
+      }
     });
   }, []);
 

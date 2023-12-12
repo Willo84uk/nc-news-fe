@@ -5,10 +5,10 @@ import { getArticles } from "../../utils";
 import { Route, Routes } from "react-router-dom";
 import SingleArticleBody from "./SingleArticleBody";
 
-function Body() {
+function Body({selectedTopic, setSelectedTopic}) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedTopic, setSelectedTopic] = useState("")
+  // const [selectedTopic, setSelectedTopic] = useState("")
 
   useEffect(() => {
     getArticles(selectedTopic).then((res) => {
