@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getArticle, patchVote } from "../../utils";
 import { useParams } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
 function SingleArticle({ isLoading, setIsLoading }) {
   const [article, setArticle] = useState({});
@@ -9,6 +10,7 @@ function SingleArticle({ isLoading, setIsLoading }) {
   const [lastVote, setLastVote] = useState(0)
   const createdAt = new Date(article.created_at);
   const articleId = useParams().article_id;
+  const {user} = useContext(UserContext)
   
 
   useEffect(() => {
@@ -51,11 +53,11 @@ function SingleArticle({ isLoading, setIsLoading }) {
       <p>
         Written by {article.author} {createdAt.toGMTString()}
       </p>
-      <button id="1" onClick={castVote} hidden={voted}>
+      <button id="1" onClick={castVote} hidden={voted || article.author === user}>
         Vote Up!
       </button>
       <p> Votes {article.votes} </p>
-      <button id="-1" onClick={castVote} hidden={voted}>
+      <button id="-1" onClick={castVote} hidden={voted || article.author === user}>
         Vote Down!
       </button>
       <button id={lastVote>0? "-1" : "1"} onClick={castVote} hidden={!voted}>
