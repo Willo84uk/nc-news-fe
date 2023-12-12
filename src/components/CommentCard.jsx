@@ -1,8 +1,12 @@
-function CommentCard() {
+function CommentCard({comment}) {
+  const createdAt = new Date(comment.created_at);
+
     return (
-      <>
-        <h3 id="commentcard">Comment Card</h3>
-      </>
+      <div id="commentcard">
+        <p>{comment.body}</p>
+        <p>Written by {comment.author} {createdAt.toGMTString()}</p>
+        <p>Votes {comment.votes}</p>
+      </div>
     );
   }
   
