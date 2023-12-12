@@ -33,7 +33,6 @@ function SingleArticle({ isLoading, setIsLoading }) {
     updatedArticle.votes += +voteAdj;
     setArticle(updatedArticle);
     setLastVote(+voteAdj)
-    // console.log(lastVote + " <-----Last vote")
     patchVote({ voteValue: voteAdj, articleId: articleId }).then((res) => {
     }).catch((err) => {
       updatedArticle.votes += -voteAdj
