@@ -8,7 +8,6 @@ import SingleArticleBody from "./SingleArticleBody";
 function Body({selectedTopic, setSelectedTopic}) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [selectedTopic, setSelectedTopic] = useState("")
 
   useEffect(() => {
     getArticles(selectedTopic).then((res) => {
