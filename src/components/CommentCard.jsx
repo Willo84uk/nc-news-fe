@@ -14,6 +14,7 @@ function CommentCard({comment}) {
     deleteComment(commentId)
     .catch((err) => {
       setError({err:err.response.data.msg, status:err.response.status})
+      event.target.disabled = false
     })
   }
 
