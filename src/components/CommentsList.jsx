@@ -15,7 +15,7 @@ useEffect(() => {
     setComments(comments)
     setIsLoading(false)
   })
-}, [])
+}, [comments])
 
 if(isLoading){
   return <p>Loading...</p>
@@ -24,7 +24,7 @@ if(isLoading){
     return (
       <>
         <div id="commentlist"></div>
-        <NewCommentForm />
+        <NewCommentForm comments={comments} setComments={setComments}/>
         {comments.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment}/>
         })}
