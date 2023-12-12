@@ -20,7 +20,5 @@ export const patchVote = ({voteValue, articleId}) => {
       }
    return newsApi.patch (`/articles/${articleId}`, voteBody).then((res) => {
         return res
-    }).catch((err) => {
-        return err
     })
 }

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 function SingleArticle({ isLoading, setIsLoading }) {
   const [article, setArticle] = useState({});
   const [voted, setVoted] = useState(false);
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(null)
   const createdAt = new Date(article.created_at);
   const articleId = useParams().article_id;
 
@@ -23,18 +23,17 @@ function SingleArticle({ isLoading, setIsLoading }) {
   const castVote = (event) => {
     const voteAdj = event.target.id;
     setVoted(true);
-    setError(false)
+    setError(null)
     const updatedArticle = { ...article };
     updatedArticle.votes += +voteAdj;
     setArticle(updatedArticle);
     patchVote({ voteValue: voteAdj, articleId: articleId }).then((res) => {
-      if(res.status !== 200){
-        updatedArticle.votes += -voteAdj
+    }).catch((err) => {
+      updatedArticle.votes += -voteAdj
         setArticle(updatedArticle)
         setVoted(false)
-        setError(true)
-      }
-    })
+        setError({err:err.response.data.msg, status:err.response.status})
+  })
   };
 
   return (
@@ -52,7 +51,7 @@ function SingleArticle({ isLoading, setIsLoading }) {
       <button id="-1" onClick={castVote} disabled={voted}>
         Vote Down!
       </button>
-      {error ? <p className="error">Error processing vote</p> : <></>}
+      {error ? <p className="error">Error processing vote: {error.status} {error.err}</p> : <></>}
       <p>Comments {article.comment_count} </p>
     </div>
   );
