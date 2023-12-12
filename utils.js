@@ -6,8 +6,8 @@ const newsApi = axios.create({
   baseURL: "https://nc-news-5sxy.onrender.com/api",
 });
 
-export const getArticles = () => {
-  return newsApi.get("/articles?limit=999").then((res) => {
+export const getArticles = (topic) => {
+  return newsApi.get(`/articles/?limit=999&topic=${topic}`).then((res) => {
     return res.data.articles;
   });
 };
@@ -42,3 +42,9 @@ export const postNewComment = ({commentInput, articleId, user}) => {
         return res.data.comment
     })
 }
+
+export const getAllTopics = () => {
+  return newsApi.get(`/topics`).then((res) => {
+    return res.data.topics;
+  });
+};
