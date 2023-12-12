@@ -28,7 +28,7 @@ if(isLoading){
         {comments.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment}/>
         })}
-        <DeleteArticleButton />
+        {/* <DeleteArticleButton /> */}
       </>
     );
   }

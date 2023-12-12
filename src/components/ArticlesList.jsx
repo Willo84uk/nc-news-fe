@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom"
 import ArticleCard from "./ArticleCard"
 import NewArticleButton from "./NewArticleButton"
 import TopicsDropdown from "./TopicsDropDown"
@@ -11,7 +10,7 @@ function ArticlesList({articles, selectedTopic, setSelectedTopic}) {
     {articles.map((article) => {
         return <ArticleCard key={article.article_id} article={article}/>
     })}
-    <NewArticleButton />
+    {/* <NewArticleButton /> */}
     </div>
     )
 }
