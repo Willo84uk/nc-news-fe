@@ -20,10 +20,12 @@ export const patchVote = ({voteValue, articleId}) => {
       }
    return newsApi.patch (`/articles/${articleId}`, voteBody).then((res) => {
         return res
-
-export const getComments = (articleId) => {
-    return newsApi.get (`/articles/${articleId}/comments`).then((res) => {
-        return res.data.comments
-
     })
 }
+
+        export const getComments = (articleId) => {
+            return newsApi.get (`/articles/${articleId}/comments`).then((res) => {
+                return res.data.comments
+                
+            })
+        }
