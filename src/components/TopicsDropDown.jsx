@@ -34,7 +34,7 @@ function TopicsDropdown({selectedTopic, setSelectedTopic}) {
   }
 
   return (
-    <Dropdown>
+    <Dropdown id="dropdown">
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         Topics
       </Dropdown.Toggle>

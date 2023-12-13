@@ -8,13 +8,15 @@ import AscDescRadio from "./AscDescRadio.jsx";
 function ArticlesList({setSortOrder, sortBy, setSortBy, articles, selectedTopic, setSelectedTopic}) {
 
     return ( 
-    <div id="articleslist">
+    <div id="articlescontainer">
     <TopicsDropdown  selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} />
+    <div id="articleslist">
     <SortByDropdown setSortBy={setSortBy} sortBy={sortBy}/>
     <AscDescRadio setSortOrder={setSortOrder}/>
     {articles.map((article) => {
         return <ArticleCard key={article.article_id} article={article}/>
     })}
+    </div>
     {/* <NewArticleButton /> */}
     </div>
     )
