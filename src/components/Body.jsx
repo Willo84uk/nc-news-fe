@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { getArticles } from "../../utils";
 import { Route, Routes, useSearchParams } from "react-router-dom";
 import SingleArticleBody from "./SingleArticleBody";
+import FourOhFour from "./FourOhFour";
 
 function Body({selectedTopic, setSelectedTopic}) {
   const [articles, setArticles] = useState([]);
@@ -11,6 +12,7 @@ function Body({selectedTopic, setSelectedTopic}) {
   const [searchParams, setSearchParams] = useSearchParams();
   let sortByTest = (searchParams.get("sort_by"))
   const[sortOrder, setSortOrder] = useState("desc")
+  const [error, setError] = useState({err:"", status:""})
 
 
   useEffect(() => {
@@ -20,6 +22,8 @@ function Body({selectedTopic, setSelectedTopic}) {
     getArticles(selectedTopic, sortByTest, sortOrder).then((res) => {
       setArticles(res);
       setIsLoading(false);
+    }).catch((err)=> {
+      setError({err: err.response.data.msg, status: err.response.status})
     });
   }, [selectedTopic, sortOrder]);
 
@@ -29,8 +33,10 @@ function Body({selectedTopic, setSelectedTopic}) {
 
   return (
     <div id="body">
+      <div className="error">{error.err?`Error: ${error.err}`:""}</div>
       <Routes>
         <Route path="/"  element={<ArticlesList articles={articles} setSortOrder={setSortOrder}/>} />
+        <Route path="/*" element={<FourOhFour />} />
         <Route path="/articles/" element={<ArticlesList articles={articles} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} setSortOrder={setSortOrder}/>} />
         <Route path="/articles/:article_id" element={<SingleArticleBody isLoading={isLoading} setIsLoading={setIsLoading}/>} />
         <Route path="/articles/topics/:topic" element={<ArticlesList articles={articles} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} setSortOrder={setSortOrder}/>} />

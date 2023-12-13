@@ -9,11 +9,16 @@ function CommentList() {
 const [comments, setComments] = useState ([])
 const [isLoading, setIsLoading] = useState(true)
 const articleId = useParams().article_id
+const [error, setError] = useState(false)
 
 useEffect(() => {
   getComments(articleId).then((comments) => {
     setComments(comments)
     setIsLoading(false)
+    setError(false)
+  }).catch((err) => {
+    setIsLoading(false)
+    setError(true)
   })
 }, [comments])
 
@@ -24,7 +29,7 @@ if(isLoading){
     return (
       <>
         <div id="commentlist"></div>
-        <NewCommentForm comments={comments} setComments={setComments}/>
+        {!error?<NewCommentForm comments={comments} setComments={setComments}/>:null}
         {comments.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment}/>
         })}
