@@ -23,6 +23,10 @@ function NewCommentForm({comments, setComments}) {
     })
     setCommentInput("")
   }
+
+  if(!user){
+    return <p className="error">You must be logged in to post a new comment</p>
+  }
   
   return (
       <>

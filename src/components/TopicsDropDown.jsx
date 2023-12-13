@@ -12,9 +12,7 @@ function TopicsDropdown({selectedTopic, setSelectedTopic}) {
 
   window.addEventListener("popstate", () => {
     const pathTopic = location.pathname.split("/")[3]
-    if(pathTopic !== selectedTopic){
-      setSelectedTopic(pathTopic)
-    } 
+    setSelectedTopic(pathTopic)
   })
 
   useEffect(() => {

@@ -9,6 +9,7 @@ function ArticleCard({ article }) {
         <img className="articlelistimg" src={article.article_img_url}></img>
         <p><Link to={`/articles/${articleID}`}>{article.title}</Link></p>
         <p>Votes {article.votes}</p>
+        <p>Comment Count {article.comment_count}</p>
         <p>Article created {createdAt.toGMTString()}</p>
       </div>
     );
