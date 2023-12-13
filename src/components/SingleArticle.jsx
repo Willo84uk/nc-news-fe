@@ -28,7 +28,7 @@ function SingleArticle({ isLoading, setIsLoading }) {
   // }
 
 if(error.err === "article not found with this article id"){
-  return <>{error ? <p className="error">Error: {error.status} {error.err}</p> : <></>}</>
+  return <>{error.err ? <p className="error">Error: {error.status} {error.err}</p> : <></>}</>
 }
 
   const castVote = (event) => {
@@ -70,7 +70,7 @@ if(error.err === "article not found with this article id"){
       <button id={lastVote>0? "-1" : "1"} onClick={castVote} hidden={!voted}>
         Undo Vote!
       </button>
-      {error ? <p className="error">Error: {error.status} {error.err}</p> : <></>}
+      {error.err ? <p className="error">Error: {error.status} {error.err}</p> : <></>}
       <p>Comments {article.comment_count} </p>
     </div>
   );

@@ -8,18 +8,17 @@ function ArticleCard({ article }) {
     const createdAt = new Date(article.created_at);
     return (
       <Card id="articlecard"style={{ width: "45vw" }}>
-        <Card.Img variant="top" src={article.article_img_url} />
+        <Card.Img variant="top" src={article.article_img_url} style={{ height: '210px' }} />
+        <Card.Header style={{ height: '110px' }}>
+          <Card.Title style={{fontSize: "14pt", fontWeight: "bold"}} as={Link} to={`/articles/${articleID}`}>{article.title}</Card.Title>
+        </Card.Header>
         <Card.Body >
-          <Card.Title>{article.title}</Card.Title>
           <Card.Text>
           Votes {article.votes} <br></br>
-         Comment Count {article.votes}<br></br>
+         Comment Count {article.votes}<br></br><br></br>
          Article created {createdAt.toGMTString()}
          </Card.Text>
         </Card.Body>
-         <Card.Footer>
-          <Button as={Link} to={`/articles/${articleID}`} variant="primary">View Article</Button>
-          </Card.Footer>
       </Card>
     );
   }

@@ -11,7 +11,7 @@ function SortByDropdown({sortBy, setSortBy}) {
 
 
   return (
-    <Dropdown>
+    <Dropdown id="dropdown">
       <Dropdown.Toggle size="lg" variant="primary" id="dropdown-basic">
         Sort results by...
       </Dropdown.Toggle>
