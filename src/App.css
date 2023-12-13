@@ -3,14 +3,20 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-image: url(https://www.bhmpics.com/downloads/newspaper-background/62.360_f_307201913_pcsbch4faog4re3s4j8okcmyxaubfvku.jpg);
 }
 
 #mainheader{
-  border: 2px solid blue
+ font-weight: bolder;
+ font-size: 100px;
+}
+
+#greeting{
+  font-size: 20px;
 }
 
 #navbar{
-  border: 2px solid red
+  font-size: 20px
 }
 
 #body{
@@ -18,6 +24,9 @@
 }
 
 #articleslist{
+  max-width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
   border: 2px solid yellow;
 }
 
@@ -42,6 +51,8 @@
 }
 
 .articlecard{
+  width: 45vw;
+  max-width: 400px;
   border: 2px solid black
 }
 
@@ -60,4 +71,8 @@ h3{
 .error{
   color: red;
   font-weight: bold;
+}
+
+#dropdown{
+  padding: 20px
 }
