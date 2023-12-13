@@ -10,9 +10,9 @@ function ArticlesList({setSortOrder, sortBy, setSortBy, articles, selectedTopic,
     return ( 
     <div id="articlescontainer">
     <TopicsDropdown  selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} />
-    <div id="articleslist">
     <SortByDropdown setSortBy={setSortBy} sortBy={sortBy}/>
     <AscDescRadio setSortOrder={setSortOrder}/>
+    <div id="articleslist">
     {articles.map((article) => {
         return <ArticleCard key={article.article_id} article={article}/>
     })}

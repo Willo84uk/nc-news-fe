@@ -35,7 +35,7 @@ function TopicsDropdown({selectedTopic, setSelectedTopic}) {
 
   return (
     <Dropdown id="dropdown">
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
+      <Dropdown.Toggle size="lg" variant="primary" id="dropdown-basic">
         Topics
       </Dropdown.Toggle>
       <Dropdown.Menu>
@@ -53,6 +53,7 @@ function TopicsDropdown({selectedTopic, setSelectedTopic}) {
             </div>
           );
         })}
+        <Dropdown.Divider />
         <Dropdown.Item as={Link} className="item" to="/articles" id="" onClick={changeTopic}>
             All
         </Dropdown.Item>
