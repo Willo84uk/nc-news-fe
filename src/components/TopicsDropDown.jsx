@@ -4,10 +4,18 @@ import { getAllTopics } from "../../utils";
 import { useEffect, useState } from "react";
 
 
-function TopicsDropdown({setSelectedTopic}) {
+function TopicsDropdown({selectedTopic, setSelectedTopic}) {
   const [isLoading, setIsLoading] = useState(true);
   const [topics, setTopics] = useState([]);
   const topic = useParams().topic;
+  
+
+  window.addEventListener("popstate", () => {
+    const pathTopic = location.pathname.split("/")[3]
+    if(pathTopic !== selectedTopic){
+      setSelectedTopic(pathTopic)
+    } 
+  })
 
   useEffect(() => {
     getAllTopics().then((res) => {

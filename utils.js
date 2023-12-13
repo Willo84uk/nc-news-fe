@@ -7,6 +7,9 @@ const newsApi = axios.create({
 });
 
 export const getArticles = (topic) => {
+  if(topic === undefined){
+    topic = ""
+  }
   return newsApi.get(`/articles/?limit=999&topic=${topic}`).then((res) => {
     return res.data.articles;
   });
