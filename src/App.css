@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   background-image: url(https://www.bhmpics.com/downloads/newspaper-background/62.360_f_307201913_pcsbch4faog4re3s4j8okcmyxaubfvku.jpg);
 }
@@ -16,26 +14,18 @@
 }
 
 #navbar{
-  font-size: 20px
-}
-
-#body{
-  border: 2px solid green;
+  font-size: 30px
 }
 
 #articleslist{
   max-width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid yellow;
+  justify-content: center;
 }
 
 #singlearticlebody{
   border: 2px solid black;
-}
-
-#topicsdropdown{
-  border: 2px solid orange
 }
 
 #commentlist{
@@ -50,14 +40,14 @@
   border: 2px solid plum
 }
 
-.articlecard{
-  width: 45vw;
-  max-width: 400px;
-  border: 2px solid black
+#articlecard{
+  max-width: 290px;
+  margin: 15px;
+  padding: 0px;
 }
 
 .articlelistimg{
-  max-width: 50%;
+  max-width: 80%;
 }
 
 .singlearticleimg{
@@ -74,6 +64,44 @@ h3{
 }
 
 #dropdown{
-  padding: 20px
+ padding: 10px
+}
+
+form{
+  padding: 10px;
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+@media all and (max-width: 680px) {
+  #articlecard{
+    min-width: 80vw;
+    margin: 15px;
+    padding: 0px;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  #mainheader{
+    font-weight: bolder;
+    font-size: 200px;
+   }
+
+   #greeting{
+    font-size: 30px;
+  }
+
+  form{
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  input[type="radio"] {
+    transform: scale(2.5);
+    margin-right: 25px;
+  }
 }
 

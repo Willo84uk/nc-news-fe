@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom"
+import { Button } from "react-bootstrap"
+function Navbar({setSelectedTopic}) {
 
-const handleClick = ({setSelectedTopic}) => {
+const handleClick = () => {
     setSelectedTopic("")
 }
-
-function Navbar() {
-    return <Link onClick={handleClick} to="/" id="navbar">Home</Link>
+    return <Button onClick={handleClick} to="/" size="lg">Home</Button>
 }
 
 export default Navbar
