@@ -1,16 +1,14 @@
 import axios from "axios";
-import { useContext } from "react";
-import { UserContext } from "./src/components/UserContext";
 
 const newsApi = axios.create({
   baseURL: "https://nc-news-5sxy.onrender.com/api",
 });
 
-export const getArticles = (topic) => {
+export const getArticles = (topic, sortByCriteria,sortOrder) => {
   if(topic === undefined){
     topic = ""
   }
-  return newsApi.get(`/articles/?limit=999&topic=${topic}`).then((res) => {
+  return newsApi.get(`/articles/?limit=999${topic?`&topic=${topic}`:""}&sort_by=${sortByCriteria}&order=${sortOrder}`).then((res) => {
     return res.data.articles;
   });
 };
