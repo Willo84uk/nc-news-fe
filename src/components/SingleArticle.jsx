@@ -57,7 +57,7 @@ function SingleArticle({ isLoading, setIsLoading }) {
         Vote Up!
       </button>
       <p> Votes {article.votes} </p>
-      <button id="-1" onClick={castVote} hidden={voted || article.author === user}>
+      <button id="-1" onClick={castVote} hidden={voted || article.votes === 0 || article.author === user}>
         Vote Down!
       </button>
       <button id={lastVote>0? "-1" : "1"} onClick={castVote} hidden={!voted}>
