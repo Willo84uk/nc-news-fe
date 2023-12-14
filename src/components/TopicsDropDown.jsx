@@ -33,7 +33,7 @@ function TopicsDropdown({setSelectedTopic, selectedTopic}) {
   return (
     <Dropdown id="dropdown">
       <Dropdown.Toggle size="lg" variant="primary" id="dropdown-basic">
-        Topics {">"}{selectedTopic?null:" all"} {selectedTopic}
+        Topics {">"}{selectedTopic?null:" All"} {selectedTopic}
       </Dropdown.Toggle>
       <Dropdown.Menu>
         {topics.map((topic) => {
