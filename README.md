@@ -2,7 +2,11 @@
 
 This project is my frontend project as part of my time with Northcoders and is linked to my backend API. 
 
-The app looks to provide a similar service to reddit and you can find a hosted verison of the app here along with the associated repo:
+The app looks to provide a similar service to reddit, the functionality meets the requirements laid out in the brief however there is scope for additional features ie add/delete articles (this functionality would be similar to the current comments sections).
+
+The current version of the repo has a hard coded user which leaves scope for external authentication services to be implemented.
+
+You can find a hosted verison of the app here along with the associated repo:
 
 https://rw-nc-news.netlify.app/
 
