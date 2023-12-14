@@ -24,7 +24,7 @@ function Body({selectedTopic, setSelectedTopic}) {
   }, [selectedTopic, sortOrder, sortBy]);
 
   if (isLoading) {
-    return "Loading...";
+    return (<p>"Loading...this could take a few moments whilst the server wakes up";</p>)
   }
 
   return (
