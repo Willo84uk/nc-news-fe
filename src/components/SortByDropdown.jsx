@@ -2,11 +2,11 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 
 
-function SortByDropdown({sortBy, setSortBy}) {
+function SortByDropdown({setSortBy}) {
+
 
   const setSortByCriteria = (event) => {
-    const updatedSortBy = {sortBy: event.target.id, order:sortBy.order}
-    setSortBy(updatedSortBy)
+    setSortBy(event.target.id)
   }
 
 

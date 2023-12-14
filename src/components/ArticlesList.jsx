@@ -7,12 +7,13 @@ import AscDescRadio from "./AscDescRadio.jsx";
 
 function ArticlesList({
   setSortOrder,
-  sortBy,
-  setSortBy,
   articles,
   selectedTopic,
   setSelectedTopic,
-}) {
+  setSortBy
+}) 
+
+{
   return (
     <div id="articlescontainer">
       <div id="dropdowncontainer">
@@ -20,7 +21,7 @@ function ArticlesList({
           selectedTopic={selectedTopic}
           setSelectedTopic={setSelectedTopic}
         />
-        <SortByDropdown setSortBy={setSortBy} sortBy={sortBy} />
+        <SortByDropdown  setSortBy={setSortBy}/>
         <AscDescRadio setSortOrder={setSortOrder} />
       </div>
       <div id="articleslist">

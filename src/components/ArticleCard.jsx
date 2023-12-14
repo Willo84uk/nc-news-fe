@@ -14,10 +14,10 @@ function ArticleCard({ article }) {
         </Card.Header>
         <Card.Body >
           <Card.Text>
-         <p> Votes {article.votes} <br></br>
-         Comment Count {article.votes}</p>
-         <p className="stamp">Article created {createdAt.toGMTString()} by {article.author}</p>
+         Votes {article.votes} <br></br>
+         Comment Count {article.votes}
          </Card.Text>
+         <p className="stamp">Article created {createdAt.toGMTString()} by {article.author}</p>
         </Card.Body>
       </Card>
     );

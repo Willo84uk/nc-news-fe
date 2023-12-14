@@ -4,7 +4,7 @@ const newsApi = axios.create({
   baseURL: "https://nc-news-5sxy.onrender.com/api",
 });
 
-export const getArticles = (topic, sortByCriteria,sortOrder) => {
+export const getArticles = (topic, sortByCriteria, sortOrder) => {
   if(topic === undefined){
     topic = ""
   }

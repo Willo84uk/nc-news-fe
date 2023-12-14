@@ -19,9 +19,6 @@ function TopicsDropdown({selectedTopic, setSelectedTopic}) {
     getAllTopics().then((res) => {
       setTopics(res);
       setIsLoading(false);
-      if(setSelectedTopic !== undefined){
-      setSelectedTopic(topic)
-      }
     });
   }, []);
 
