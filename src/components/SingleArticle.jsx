@@ -23,18 +23,18 @@ function SingleArticle({ isLoading, setIsLoading }) {
     });
   }, []);
 
-  // if (isLoading) {
-  //   return <>Loading...</>;
-  // }
+  if (isLoading) {
+    return <>Loading...</>;
+  }
 
-if(error.err === "article not found with this article id"){
+if(error.err && error.err==="article not found with this article id"){
   return <>{error.err ? <p className="error">Error: {error.status} {error.err}</p> : <></>}</>
 }
 
   const castVote = (event) => {
     const voteAdj = event.target.id;
     setVoted(true);
-    setError(null)
+    setError({err:"", status:""})
     const updatedArticle = { ...article };
     if(event.target.innerText === "Undo Vote!"){
       setVoted(false)
@@ -57,21 +57,19 @@ if(error.err === "article not found with this article id"){
       <h3>{article.title}</h3>
       <img className="singlearticleimg" src={article.article_img_url}></img>
       <article>{article.body}</article>
-      <p>
+      <p className="stamp">
         Written by {article.author} {createdAt.toGMTString()}
       </p>
-      <button id="1" onClick={castVote} hidden={voted || article.author === user}>
-        Vote Up!
-      </button>
-      <p> Votes {article.votes} </p>
-      <button id="-1" onClick={castVote} hidden={voted || article.votes === 0 || article.author === user}>
-        Vote Down!
-      </button>
-      <button id={lastVote>0? "-1" : "1"} onClick={castVote} hidden={!voted}>
+      <p className="votes">
+      Votes {article.votes} 
+      <i className="fa-regular fa-thumbs-up votes up" id="1" onClick={castVote} hidden={voted || article.author === user}></i>
+      <i className="fa-regular fa-thumbs-down votes down" id="-1" onClick={castVote} hidden={voted || article.votes === 0 || article.author === user}></i>
+      <button id={lastVote>0? "-1" : "1"} className="votes undo" onClick={castVote} hidden={!voted}>
         Undo Vote!
       </button>
+      </p>
       {error.err ? <p className="error">Error: {error.status} {error.err}</p> : <></>}
-      <p>Comments {article.comment_count} </p>
+     <p className="votes"> Comments {article.comment_count} </p>
     </div>
   );
 }

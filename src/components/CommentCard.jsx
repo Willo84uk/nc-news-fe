@@ -21,9 +21,9 @@ function CommentCard({comment}) {
   return (
       <div id="commentcard">
         <p>{comment.body}</p>
-        <p>Written by {comment.author} {createdAt.toGMTString()}</p>
-        <p>Votes {comment.votes}</p>
-        {user===comment.author? <button id={comment.comment_id} onClick={handleClick}>Delete Comment</button>:null}
+        <p className="stamp">Written by {comment.author} {createdAt.toGMTString()}</p>
+        <p className="votes">Votes {comment.votes}</p>
+        {user===comment.author? <button id={comment.comment_id} className="deletebutton" onClick={handleClick}>Delete Comment</button>:null}
         {error? <p className="error">Error: {error.status} {error.err}</p>:null}
       </div>
     );

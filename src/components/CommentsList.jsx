@@ -27,14 +27,14 @@ if(isLoading){
 }
 
     return (
-      <>
-        <div id="commentlist"></div>
+      
+        <div id="commentlist">
         {!error?<NewCommentForm comments={comments} setComments={setComments}/>:null}
         {comments.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment}/>
         })}
         {/* <DeleteArticleButton /> */}
-      </>
+        </div>
     );
   }
   

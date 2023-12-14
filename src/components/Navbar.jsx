@@ -5,7 +5,9 @@ function Navbar({setSelectedTopic}) {
 const handleClick = () => {
     setSelectedTopic("")
 }
-    return <Button as={Link} onClick={handleClick} to="/" size="lg">Home</Button>
+    return (
+    <nav><Button as={Link} onClick={handleClick} to="/" size="lg">Home</Button></nav>
+    )
 }
 
 export default Navbar

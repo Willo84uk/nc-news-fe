@@ -29,22 +29,13 @@ function NewCommentForm({comments, setComments}) {
   }
   
   return (
-      <>
-        <form id="newcommentform"></form>
-        <label htmlFor="comment">New comment (min 25 Char.):</label>
-        <input className="input-field"
-        onChange={handleChange}
-        type ="text"
-        placeholder="Comment here"
-        id="comment"
-        name="comment"
-        autoComplete="off"
-        required={true}
-        value={commentInput}
-        />
-        <button disabled={commentInput.length > 25 ? false: true} onClick={handleSubmit}>Submit</button>
+    
+        <form id="newcommentform">
+        <label htmlFor="comment">New comment (min 25 Char.):</label><br></br>
+        <textarea value={commentInput} autoComplete="off" name="comment" id="comment" placeholder="Comment here" className="input-field" rows="4" cols="50" onChange={handleChange}></textarea><br></br>
+        <button className={commentInput.length > 25 ? "submitbutton": "submitbuttoninactive"} disabled={commentInput.length > 25 ? false: true} onClick={handleSubmit}>Submit</button>
         {error ? <p className="error">Error: {error.status} {error.err}</p> : null}
-      </>
+        </form>
     );
   }
   

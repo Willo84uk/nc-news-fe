@@ -12,9 +12,11 @@ function App() {
   return (
     <>
     <UserProvider>
-      <Header />
-      <Navbar setSelectedTopic={setSelectedTopic}/>
-      <Body selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
+      <div className='maincontainer'>
+        <Header />
+        <Navbar setSelectedTopic={setSelectedTopic}/>
+        <Body selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic}/>
+      </div>
     </UserProvider>
     </>
   )

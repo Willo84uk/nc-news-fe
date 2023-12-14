@@ -6,7 +6,7 @@ function Header() {
     return (
     <>       
     <h1 id="mainheader">NC News</h1>
-    <p id="greeting">Welcome {user ? `back ${user}` : "Guest"}</p>
+    <div id="greeting">Welcome {user ? `back ${user}` : "Guest"}</div>
     </>
     )
 }

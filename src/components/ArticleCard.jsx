@@ -14,9 +14,9 @@ function ArticleCard({ article }) {
         </Card.Header>
         <Card.Body >
           <Card.Text>
-          Votes {article.votes} <br></br>
-         Comment Count {article.votes}<br></br><br></br>
-         Article created {createdAt.toGMTString()}
+         <p> Votes {article.votes} <br></br>
+         Comment Count {article.votes}</p>
+         <p className="stamp">Article created {createdAt.toGMTString()} by {article.author}</p>
          </Card.Text>
         </Card.Body>
       </Card>
