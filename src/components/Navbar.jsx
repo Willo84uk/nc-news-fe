@@ -6,7 +6,7 @@ const handleClick = () => {
     setSelectedTopic("")
 }
     return (
-    <nav><Button as={Link} onClick={handleClick} to="/" size="lg">Home</Button></nav>
+    <nav><Button as={Link} onClick={handleClick} to="/articles" size="lg">Home</Button></nav>
     )
 }
 

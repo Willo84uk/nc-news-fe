@@ -27,7 +27,7 @@ function SingleArticle({ isLoading, setIsLoading }) {
     return <>Loading...</>;
   }
 
-if(error.err && error.err==="article not found with this article id"){
+if(error.err && error.err==="article not found with this article id" || error.err==="bad request"){
   return <>{error.err ? <p className="error">Error: {error.status} {error.err}</p> : <></>}</>
 }
 
@@ -61,7 +61,7 @@ if(error.err && error.err==="article not found with this article id"){
         Written by {article.author} {createdAt.toGMTString()}
       </p>
       <p className="votes">
-      Votes {article.votes} 
+      Votes {article.votes} <br></br>
       <i className="fa-regular fa-thumbs-up votes up" id="1" onClick={castVote} hidden={voted || article.author === user}></i>
       <i className="fa-regular fa-thumbs-down votes down" id="-1" onClick={castVote} hidden={voted || article.votes === 0 || article.author === user}></i>
       <button id={lastVote>0? "-1" : "1"} className="votes undo" onClick={castVote} hidden={!voted}>

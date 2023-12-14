@@ -72,6 +72,7 @@
 
 nav {
   margin: 8px;
+  margin-bottom: 0;
 }
 
 #articleslist {
@@ -133,16 +134,17 @@ nav {
 .votes {
   font-size: 1.5rem;
   margin-left: 10px;
+  margin-right: 10px;
   font-weight: bold;
 }
 
 .up {
-  font-size: 20px;
+  font-size: 40px;
   color: blue;
 }
 
 .down {
-  font-size: 20px;
+  font-size: 40px;
   color: red;
 }
 
