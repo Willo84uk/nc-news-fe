@@ -57,6 +57,12 @@
   box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
 }
 
+#body{
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 #mainheader {
   font-weight: bolder;
   font-size: 100px;

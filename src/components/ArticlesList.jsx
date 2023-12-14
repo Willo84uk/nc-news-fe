@@ -1,4 +1,3 @@
-import { useSearchParams } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import NewArticleButton from "./NewArticleButton";
 import SortByDropdown from "./SortByDropdown.jsx";
