@@ -1,13 +1,13 @@
 import Dropdown from "react-bootstrap/Dropdown";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getAllTopics } from "../../utils";
 import { useEffect, useState } from "react";
 
 
-function TopicsDropdown({selectedTopic, setSelectedTopic}) {
+function TopicsDropdown({setSelectedTopic}) {
   const [isLoading, setIsLoading] = useState(true);
   const [topics, setTopics] = useState([]);
-  const topic = useParams().topic;
+
   
 
   window.addEventListener("popstate", () => {
