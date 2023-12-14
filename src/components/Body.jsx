@@ -31,11 +31,11 @@ function Body({selectedTopic, setSelectedTopic}) {
     <div id="body">
       <div className="error">{error.err?`Error: ${error.err}`:""}</div>
       <Routes>
-        <Route path="/"  element={<ArticlesList articles={articles} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} setSortOrder={setSortOrder} setSortBy={setSortBy}/>}/>
+        <Route path="/"  element={<ArticlesList articles={articles} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} setSortOrder={setSortOrder} setSortBy={setSortBy} sortBy={sortBy}/>}/>
         <Route path="/*" element={<FourOhFour />} />
-        <Route path="/articles/" element={<ArticlesList articles={articles} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} setSortOrder={setSortOrder} setSortBy={setSortBy}/>} />
+        <Route path="/articles/" element={<ArticlesList articles={articles} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} setSortOrder={setSortOrder} setSortBy={setSortBy} sortBy={sortBy}/>} />
         <Route path="/articles/:article_id" element={<SingleArticleBody isLoading={isLoading} setIsLoading={setIsLoading}/>} />
-        <Route path="/articles/topics/:topic" element={<ArticlesList articles={articles} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} setSortOrder={setSortOrder} setSortBy={setSortBy}/>} />
+        <Route path="/articles/topics/:topic" element={<ArticlesList articles={articles} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} setSortOrder={setSortOrder} setSortBy={setSortBy} sortBy={sortBy}/>} />
       </Routes>
     </div>
   );

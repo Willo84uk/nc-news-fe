@@ -9,7 +9,8 @@ function ArticlesList({
   articles,
   selectedTopic,
   setSelectedTopic,
-  setSortBy
+  setSortBy,
+  sortBy
 }) 
 
 {
@@ -20,7 +21,7 @@ function ArticlesList({
           selectedTopic={selectedTopic}
           setSelectedTopic={setSelectedTopic}
         />
-        <SortByDropdown  setSortBy={setSortBy}/>
+        <SortByDropdown  setSortBy={setSortBy} sortBy={sortBy}/>
         <AscDescRadio setSortOrder={setSortOrder} />
       </div>
       <div id="articleslist">

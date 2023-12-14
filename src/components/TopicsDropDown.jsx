@@ -4,7 +4,7 @@ import { getAllTopics } from "../../utils";
 import { useEffect, useState } from "react";
 
 
-function TopicsDropdown({setSelectedTopic}) {
+function TopicsDropdown({setSelectedTopic, selectedTopic}) {
   const [isLoading, setIsLoading] = useState(true);
   const [topics, setTopics] = useState([]);
 
@@ -33,7 +33,7 @@ function TopicsDropdown({setSelectedTopic}) {
   return (
     <Dropdown id="dropdown">
       <Dropdown.Toggle size="lg" variant="primary" id="dropdown-basic">
-        Topics
+        Topics {">"}{selectedTopic?null:" all"} {selectedTopic}
       </Dropdown.Toggle>
       <Dropdown.Menu>
         {topics.map((topic) => {
