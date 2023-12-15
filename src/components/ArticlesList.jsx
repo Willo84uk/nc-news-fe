@@ -10,7 +10,8 @@ function ArticlesList({
   selectedTopic,
   setSelectedTopic,
   setSortBy,
-  sortBy
+  sortBy,
+  sortOrder
 }) 
 
 {
@@ -21,8 +22,8 @@ function ArticlesList({
           selectedTopic={selectedTopic}
           setSelectedTopic={setSelectedTopic}
         />
-        <SortByDropdown  setSortBy={setSortBy} sortBy={sortBy}/>
-        <AscDescRadio setSortOrder={setSortOrder} />
+        <SortByDropdown  setSortBy={setSortBy} sortBy={sortBy} selectedTopic={selectedTopic}/>
+        <AscDescRadio sortOrder={sortOrder} setSortOrder={setSortOrder} />
       </div>
       <div id="articleslist">
         {articles.map((article) => {

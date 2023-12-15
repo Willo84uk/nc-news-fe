@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 
 
-function SortByDropdown({sortBy, setSortBy}) {
+function SortByDropdown({sortBy, setSortBy, selectedTopic}) {
   const[currentSB, setCurrentSB] = useState("Votes")
   const sortByLookup = {comment_count:"Comment Count", created_at: "Date Created", votes:"Votes"}
 
@@ -11,8 +11,13 @@ function SortByDropdown({sortBy, setSortBy}) {
   const setSortByCriteria = (event) => {
     setSortBy(event.target.id)
     setCurrentSB(sortByLookup[event.target.id])
-
   }
+
+  useEffect(() => {
+    if(sortBy){
+      setCurrentSB(sortByLookup[sortBy])
+    }
+  },[selectedTopic])
 
 
   return (
