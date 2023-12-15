@@ -9,9 +9,9 @@ function ArticlesList({
   articles,
   selectedTopic,
   setSelectedTopic,
-  setSortBy,
-  sortBy,
-  sortOrder
+  sortOrder,
+  setSearchParams,
+  searchParams
 }) 
 
 {
@@ -21,9 +21,11 @@ function ArticlesList({
         <TopicsDropdown
           selectedTopic={selectedTopic}
           setSelectedTopic={setSelectedTopic}
+          setSearchParams={setSearchParams} 
+          searchParams={searchParams}
         />
-        <SortByDropdown  setSortBy={setSortBy} sortBy={sortBy} selectedTopic={selectedTopic}/>
-        <AscDescRadio sortOrder={sortOrder} setSortOrder={setSortOrder} />
+        <SortByDropdown selectedTopic={selectedTopic} setSearchParams={setSearchParams} searchParams={searchParams}/>
+        <AscDescRadio selectedTopic={selectedTopic} setSearchParams={setSearchParams} searchParams={searchParams} sortOrder={sortOrder} setSortOrder={setSortOrder} />
       </div>
       <div id="articleslist">
         {articles.map((article) => {

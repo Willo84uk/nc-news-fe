@@ -3,21 +3,25 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 
 
-function SortByDropdown({sortBy, setSortBy, selectedTopic}) {
+function SortByDropdown({setSearchParams, searchParams, selectedTopic}) {
   const[currentSB, setCurrentSB] = useState("Votes")
   const sortByLookup = {comment_count:"Comment Count", created_at: "Date Created", votes:"Votes"}
 
 
   const setSortByCriteria = (event) => {
-    setSortBy(event.target.id)
+    event.preventDefault()
+    let newSearchParams = {sort_by:event.target.id, order:searchParams.get("order")?searchParams.get("order"):"desc"}
+    setSearchParams(newSearchParams);
     setCurrentSB(sortByLookup[event.target.id])
   }
 
   useEffect(() => {
-    if(sortBy){
-      setCurrentSB(sortByLookup[sortBy])
+    if(searchParams.get("sort_by")){
+      setCurrentSB(sortByLookup[searchParams.get("sort_by")])
+    } else {
+      setCurrentSB("Votes")
     }
-  },[selectedTopic])
+  },[searchParams, selectedTopic])
 
 
   return (

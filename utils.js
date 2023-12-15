@@ -5,11 +5,14 @@ const newsApi = axios.create({
 });
 
 export const getArticles = (topic, sortByCriteria, sortOrder) => {
-  if(topic === undefined){
+  if(!topic){
     topic = ""
   }
-  if(sortByCriteria === null){
+  if(!sortByCriteria){
     sortByCriteria = "votes"
+  }
+  if(!sortOrder){
+    sortOrder = "desc"
   }
   return newsApi.get(`/articles/?limit=999${topic?`&topic=${topic}`:""}&sort_by=${sortByCriteria}&order=${sortOrder}`).then((res) => {
     return res.data.articles;
